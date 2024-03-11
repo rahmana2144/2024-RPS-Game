@@ -1,50 +1,35 @@
-# checks users enter yes (y) or no (n)
-def yes_no(question):
-    while True:
-        response = input(question).lower()
-
-        # check use response, question
-        # repeats if users say yes / no
-
-        if response == "yes" or response == "y":
-            return "yes"
-        elif response == "no" or response == "n":
-            return "no"
-        else:
-            print("Please enter yes / no")
-
-
+# Displays instructions
 def instructions():
     print('''
 
 **** Instructions ****
 
-To begin, decide on a score goal (eg: The first one to get a score of 50 wins).
+To begin, choose the number of rounds (or [press <enter> for 
+infinite mode).
 
-For each round of the game, you win points by rolling dice.
-The winner of the round is the one who gets 13 (or slightly less)
+Then play against the computer. You need to choose R (rock),
+P (paper) or @ (scissors).
 
-If you win the round, then your score will increase by the 
-number of points that you earned. If your first roll of two 
-dice is a double (eg: both of the dice show a three), then your score
-will be DOUBLE the number of points.
+The rules are as follows:
+- rock beats scissors
+- scissors beats paper
+- paper beats rock
 
-If you lose the round, then you don"t get any points.
-
-If you and the computer tie (eg: you both geta score of 11,
-then you will have 11 points added to your score.
-
+    Good luck!
     ''')
 
 
 # Main routine
 
 print()
-print("🎲🎲 Roll it 13 🎲🎲")
+print("💎📰✂ Rock / Paper / Scissors Game ✂📰💎")
 print()
 
-want_instructions = yes_no("Do you want to read the instructions?")
+# ask user if they want to see the instructions and display
+# them if requested
+want_instructions = string_checker("Do you want to read the instructions? ")
 
+# checks user enter yes (y) or no (n)
 if want_instructions == "yes":
     instructions()
 
