@@ -175,3 +175,29 @@ while rounds_played < num_rounds:
 
 # Game history / Statistics area
 
+if rounds_played > 0:
+    # Calculate Statistics
+    rounds_won = rounds_played - rounds_tied - rounds_lost
+    percent_won = rounds_won / rounds_played * 100
+    percent_lost = rounds_lost / rounds_played * 100
+    percent_tied = 100 - percent_won - percent_lost
+
+    # Output Game statistics
+    print("📊📊📊Game Statistics📊📊📊")
+    print(f"👍 Won: {percent_won:.2f} \t " 
+          f"😥 Lost: {percent_lost:.2f} \t"
+          f"👔 Tied: {percent_tied:.2f}")
+
+    # ask user if they want to see their game history and output if its requested
+    see_history = string_checker("\nDo you want to see your game history? ")
+    if see_history == "yes":
+        for item in game_history:
+            print(item)
+
+    print()
+    print("Thanks for playing.")
+
+else:
+    print("🐔🐔🐔Oops - You chickened out! 🐔🐔🐔")
+
+
